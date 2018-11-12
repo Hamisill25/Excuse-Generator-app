@@ -1,0 +1,49 @@
+Excuse Generator app
+1. Setting up the screen
+Here’s the screen layout. Every time you click the button, a new excuse will appear at the bottom of the screen:
+2. Coding the blocks: a slot-machine algorithm
+The rules (or steps) that programmers think about and then turn into code are called an algorithm. In this case, you’re going to use an algorithm that works like a slot machine. On a slot machine, symbols spin around on three wheels, and if all three match, you get a pay- out. In your algorithm, you’ll have four wheels (lists); and instead of symbols, you’ll write parts of a sentence that make up an excuse. As long as you write the sentence parts so that they follow the same structure and fit together when you read them, you can mix and match any combination of the four lists.
+CHAPTER 6 Lists and loops 119
+  Licensed to matt richards <matthewrmcgeehan2@gmail.com>
+120 Hello App Inventor!
+The sentence structure must always be the same. It starts with an apology, followed by a
+person who did some kind of action at a location, like so:
+at the swimming pool. in the Principal’s office.
+If you write 10 elements for each list (Apology, Person, Action, and Location), then the number of possible combinations is 10 x 10 x 10 x 10 = 10,000 sentences.
+     Sentence part list:
+Apology
+Person
+Action
+Location
+ Example: Example:
+I’m sorry,
+A thousand apologies,
+my sister my dog
+set fire to my homework ate my homework
+             3.
+Learning Point: Algorithms
+An algorithm is a precise set of instructions that solve a problem. Algorithms exist outside of the world of computer programs. You’ll find them everywhere—in math, science, engineering, Eng- lish, art, and even in your day-to-day life. Here are some examples of algorithms you’ve probably come across:
+■ A recipe to bake a cake
+■ Working out the area of a shape
+■ Folding a paper model like a bird or airplane
+■ Following the rules of a game
+These algorithms might appear in lots of different ways: a recipe is usually written down; to work out a math problem, you might have written instructions or an example to follow; to fold a paper model, you’ll probably follow a diagram or copy someone else; and to learn a game, you may listen to instruc- tions. Computer scientists do all these things, too, when they want to figure out and share an algo- rithm—they may imagine it and talk it through, write down the steps, or draw a diagram like a flowchart.
+One thing that is often very important in computer algorithms is that programmers want to build an efficient algorithm. This is because computers can do millions of operations every second, so even a small change in the time to complete some instructions can make a big difference in how quickly the overall program or app runs. Think about it like this: saving 5 seconds when you bake a cake is no big deal; but if you make a million cakes, the overall saving is about 58 days!
+Setting up the lists
+First set up the Apology list with 10 elements. This is almost the same as setting up any other variable. As with any other variable, you start with an initialize global block from the Variables group of the blocks. Change the name of the variable to something sensible: Apology. Now, instead of a number or text
+string, you use a make a list block from the Lists group. Your block will look like this.
+ Licensed to matt richards <matthewrmcgeehan2@gmail.com>
+
+In some apps, you may not know what the list will contain in the future—for example, if you’re setting up lists to store users’ contacts or high scores, you can only fill in the list elements once the user is running the app. In that case, you would stop here, leave this variable definition block as it is (with empty sockets after make a list), and move on to programming the rest of the app. But in this app, you’re going to build the sentence elements right into the program—so you can add the 10 apologies to the list as text blocks, like so:
+ Now add the other three lists to the blocks. The fastest way is to select, copy, and paste the previous block three times; change the variable names (to Person, Action, and Location); and then change the text blocks. Feel free to change these or add additional text blocks to any of the lists. Here’s the way ours looked when we finished:
+CHAPTER 6 Lists and loops 121
+ Licensed to matt richards <matthewrmcgeehan2@gmail.com>
+
+122 Hello App Inventor!
+ 4. Building the sentence
+You’ve finished all the hard work. When ExcuseButton is clicked, you need to choose a random element from each of the four lists. In some programming languages, you do this by picking a random number and then choosing the element at that position (or index) in
+Licensed to matt richards <matthewrmcgeehan2@gmail.com>
+
+the list. App Inventor makes things even simpler using a block called pick a random item. You tell it which list to use, and it randomly selects an item from that list. If you do that for the four lists and display the elements together in ExcuseLabel, your blocks look like this:
+Try it—each time the button is clicked, you should see 1 of 10,000 possible excuses. You could use this as the basis for a game with friends where each player clicks the button and then has to explain what happened to their homework, starting with that sentence. The more plausible, creative, and imaginative they are, the more points you should give them.
+You could enhance the app by having it play some sad music as you give your excuse—maybe it will sway your teachers. You could also have the text-to-speech component speak the excuse (we guarantee it will sound more plausible than you—because it won’t snicker or laugh).
